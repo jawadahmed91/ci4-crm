@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class SalesTeamModel extends Model
 {
-    protected $table            = 'salesteams';
+    protected $table            = 'sales_team';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';

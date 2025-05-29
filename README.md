@@ -33,7 +33,16 @@ A simple CRM system built using CodeIgniter 4 with:
    php spark migrate
    php spark db:seed MainSeeder
 
-4. Start development server:
+
+5. Install Firebase JWT in projects:
+
+   ```bash
+   composer require firebase/php-jwt 
+
+
+6. Start development server:
 
    ```bash
    php spark serve 
+
+
