@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
@@ -42,6 +41,13 @@ abstract class BaseController extends Controller
      * The creation of dynamic property is deprecated in PHP 8.2.
      */
     // protected $session;
+
+    /**
+     * An array of aliases for middleware.
+     */
+    protected $aliases = [
+        'cors' => \App\Middleware\CorsMiddleware::class,
+    ];
 
     /**
      * @return void

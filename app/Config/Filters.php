@@ -1,5 +1,4 @@
 <?php
-
 namespace Config;
 
 use CodeIgniter\Config\Filters as BaseFilters;
@@ -35,6 +34,7 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'auth'          => \App\Filters\AuthFilter::class,
+        'cors'          => \App\Middleware\CorsMiddleware::class,
     ];
 
     /**
@@ -55,7 +55,7 @@ class Filters extends BaseFilters
             'forcehttps', // Force Global Secure Requests
             'pagecache',  // Web Page Caching
         ],
-        'after' => [
+        'after'  => [
             'pagecache',   // Web Page Caching
             'performance', // Performance Metrics
             'toolbar',     // Debug Toolbar
@@ -73,8 +73,9 @@ class Filters extends BaseFilters
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
+            'cors',
         ],
-        'after' => [
+        'after'  => [
             // 'honeypot',
             // 'secureheaders',
         ],
@@ -104,5 +105,10 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+        // 'cors' => [
+        //     'before' => ['App\Middleware\CorsMiddleware'],
+        //     'only'   => ['api/*'],
+        // ],
+    ];
 }

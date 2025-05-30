@@ -12,6 +12,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/login', 'Auth::login');
 $routes->post('/auth/attemptLogin', 'Auth::attemptLogin');
 
+$routes->get('/api/sso/token', 'Api\SsoController::getToken', ['filter' => 'cors']);
 // ======================
 // Protected Routes (Require Auth)
 // ======================
