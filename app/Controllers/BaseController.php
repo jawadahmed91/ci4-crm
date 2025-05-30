@@ -45,10 +45,6 @@ abstract class BaseController extends Controller
     /**
      * An array of aliases for middleware.
      */
-    protected $aliases = [
-        'cors' => \App\Middleware\CorsMiddleware::class,
-    ];
-
     /**
      * @return void
      */

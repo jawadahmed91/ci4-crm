@@ -12,8 +12,33 @@ class SsoController extends BaseController
  *
  * @return ResponseInterface
  */
-    public function getToken()
+    public function getToken(): ResponseInterface
     {
+        // // Method 1: Using Request URI (Recommended)
+        // $baseUrl = $this->request->getUri()->getBaseURL();
+        // $domain  = $this->request->getUri()->getHost();
+        // $port    = $this->request->getUri()->getPort();
+        // $scheme  = $this->request->getUri()->getScheme();
+
+        // // Method 2: Using helpers
+        // $baseUrlHelper    = base_url();
+        // $domainFromHelper = parse_url(base_url(), PHP_URL_HOST);
+
+        // // Method 3: Server variables
+        // $httpHost   = $_SERVER['HTTP_HOST'] ?? '';
+        // $serverName = $_SERVER['SERVER_NAME'] ?? '';
+
+        // return $this->response->setJSON([
+        //     'base_url'           => $baseUrl,
+        //     'domain'             => $domain,
+        //     'port'               => $port,
+        //     'scheme'             => $scheme,
+        //     'base_url_helper'    => $baseUrlHelper,
+        //     'domain_from_helper' => $domainFromHelper,
+        //     'http_host'          => $httpHost,
+        //     'server_name'        => $serverName,
+        //     'full_url'           => $scheme . '://' . $domain . ($port ? ':' . $port : ''),
+        // ]);
         // Get CI4 session instance
         $session = session();
 
